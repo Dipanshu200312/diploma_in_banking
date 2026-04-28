@@ -2832,12 +2832,73 @@ section,
   margin-top: 28px;
 }
 
+.hero-stats-banner {
+  background: #f5a623;
+  padding: 1.55rem 5%;
+  box-shadow: inset 0 2px 0 rgba(22,34,97,0.08);
+}
+
+.hero-stats-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+}
+
+.hero-stat-item {
+  min-height: 58px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 1.6rem;
+  color: var(--navy-dark);
+  border-right: 1px solid rgba(22, 34, 97, 0.24);
+  position: relative;
+}
+
+.hero-stat-item:last-child {
+  border-right: 0;
+}
+
+.hero-stat-value {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(1.45rem, 2.5vw, 2rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0;
+  color: var(--navy-dark);
+  white-space: nowrap;
+}
+
+.hero-stat-label {
+  margin-top: 0.38rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(0.68rem, 0.88vw, 0.82rem);
+  font-weight: 900;
+  line-height: 1.25;
+  text-transform: uppercase;
+  color: rgba(22, 34, 97, 0.86);
+  letter-spacing: 0.015em;
+}
+
 .faculty-subheading {
   max-width: 980px;
   margin: 0 auto 24px;
   font-size: clamp(1rem, 2vw, 1.35rem);
   font-weight: 700;
   line-height: 1.45;
+  color: var(--text-mid);
+}
+
+.accreditation-subheading {
+  max-width: 1120px;
+  margin: 0 auto 18px;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-weight: 700;
+  line-height: 1.55;
   color: var(--text-mid);
 }
 
@@ -3038,6 +3099,80 @@ section,
     flex-basis: 215px;
     height: 215px;
   }
+
+  .hero-stats-banner {
+    padding: 1rem 4%;
+    overflow: visible;
+  }
+
+  .hero-stats-inner {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    min-width: 0;
+    gap: 0;
+  }
+
+  .hero-stat-item {
+    min-height: 70px;
+    padding: 0.85rem 0.65rem;
+    border-right: 1px solid rgba(22, 34, 97, 0.18);
+    border-bottom: 1px solid rgba(22, 34, 97, 0.18);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .hero-stat-item:nth-child(2n) {
+    border-right: 0;
+  }
+
+  .hero-stat-item:last-child {
+    grid-column: 1 / -1;
+    border-right: 0;
+    border-bottom: 0;
+  }
+
+  .hero-stat-value {
+    font-size: 1.55rem;
+    font-weight: 900;
+  }
+
+  .hero-stat-label {
+    font-size: 0.66rem;
+    font-weight: 900;
+    line-height: 1.3;
+  }
+
+  .mentor-slider-viewport {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .mentor-slider-viewport::-webkit-scrollbar {
+    display: none;
+  }
+
+  #mentorTrack {
+    animation: none;
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+    gap: 12px;
+    padding: 4px 6px 10px;
+    overflow: visible;
+    scroll-snap-type: x mandatory;
+  }
+
+  #mentorTrack .mentor-card,
+  #mentorTrack .mentor-card-flip {
+    flex: 0 0 min(82vw, 290px);
+    width: min(82vw, 290px);
+    max-width: min(82vw, 290px);
+    scroll-snap-align: start;
+  }
 }
 </style>
 <!-- Google Tag Manager -->
@@ -3141,6 +3276,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<div class="hero-stats-banner" aria-label="Program highlights">
+  <div class="hero-stats-inner">
+    <div class="hero-stat-item">
+      <span class="hero-stat-value">25 LPA</span>
+      <span class="hero-stat-label">Average Salary</span>
+    </div>
+    <div class="hero-stat-item">
+      <span class="hero-stat-value">95% Pass</span>
+      <span class="hero-stat-label">Rate</span>
+    </div>
+    <div class="hero-stat-item">
+      <span class="hero-stat-value">4.8/5</span>
+      <span class="hero-stat-label">Student Satisfaction Score</span>
+    </div>
+    <div class="hero-stat-item">
+      <span class="hero-stat-value">5</span>
+      <span class="hero-stat-label">Month Duration</span>
+    </div>
+    <div class="hero-stat-item">
+      <span class="hero-stat-value">Upto 2 Cr</span>
+      <span class="hero-stat-label">Highest Salary Package</span>
+    </div>
+  </div>
+</div>
+
 <!-- SECTION 2: ALIGN -->
 <section id="align">
   <div class="container">
@@ -3194,6 +3354,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  <section class="section-white">
     <div class="container">
       <h2 class="section-title center" style="text-align: center;">Our Global <span class="red-text">Accreditations</span></h2>
+      <p class="sec-sub center accreditation-subheading">The CWM® is awarded by AAFM International - founded in 1996, with presence in 151+ countries and partnerships with 800+ universities worldwide.</p>
       <div class="accred-scroll-wrap">
         <div class="accred-scroll-track">
           <div class="accred-logo-box"><img src="https://aafmindia.info/Chartered-trust-and-estate-planner/assets/images/about/1.jpg" alt="AAFM Accreditation" /></div>
@@ -4461,7 +4622,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="captcha-box">
            
 <div class="g-recaptcha" data-sitekey="6LeX8UYkAAAAANgV9gtu11UbL_ZbA4P8_NGzG8PV"></div>          </div>
-          <button type="submit" name="submit" class="btn" style="width:100%;">👉 Get My Plan</button>
+          <button type="submit" name="submit" class="btn" style="width:100%;">Submit</button>
         </form>
       </div>
     </div>
