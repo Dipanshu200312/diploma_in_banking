@@ -1759,7 +1759,6 @@
 }
 
 .cta-banner::before {
-    content: '';
     position: absolute;
     top: -30%;
     right: -8%;
@@ -2799,6 +2798,247 @@
         text-align: center;
     }
 }
+/* Final UI fixes for CTA modal, faculty cards, and image fit */
+section,
+.section-white,
+.section-light,
+.section-grad,
+.gallery-section,
+.mentors-section,
+.enquire-section,
+.our-achievements,
+.about-cfp,
+.placement-companies {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+
+.section-lead {
+  margin-bottom: 1.7rem;
+}
+
+.reality-grid,
+.shift-cards,
+.transform-split {
+  margin-bottom: 2rem;
+}
+
+.mentor-featured-row {
+  margin-bottom: 44px;
+}
+
+.mentor-slider-wrap,
+.cta-banner {
+  margin-top: 28px;
+}
+
+.faculty-subheading {
+  max-width: 980px;
+  margin: 0 auto 24px;
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  font-weight: 700;
+  line-height: 1.45;
+  color: var(--text-mid);
+}
+
+#mentorTrack .mentor-card-flip {
+  perspective: none;
+  cursor: default;
+}
+
+#mentorTrack .mentor-card-inner,
+#mentorTrack .mentor-card-flip:hover .mentor-card-inner,
+#mentorTrack .mentor-card-flip:active .mentor-card-inner {
+  transform: none;
+  transform-style: flat;
+}
+
+#mentorTrack .mentor-card-front {
+  position: relative;
+  height: 100%;
+  backface-visibility: visible;
+}
+
+#mentorTrack .mentor-card-back {
+  display: none;
+}
+
+#mentorTrack .mentor-card-flip:hover .mentor-card-front {
+  transform: none;
+}
+
+.modal-overlay {
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  padding: clamp(0.75rem, 3vw, 1.5rem);
+}
+
+.modal {
+  width: min(100%, 430px);
+  max-height: calc(100dvh - 2rem);
+  overflow-y: auto;
+  padding: clamp(1.4rem, 3vw, 2rem);
+  border-radius: 16px;
+}
+
+.modal-header {
+  margin-bottom: 1.1rem;
+  padding-right: 2.25rem;
+}
+
+.modal-form .form-group {
+  margin-bottom: 0.75rem;
+}
+
+.modal-form .form-group input,
+.modal-form .form-group select {
+  padding: 0.62rem 0.9rem;
+}
+
+.captcha-box {
+  overflow: hidden;
+  justify-content: center;
+  padding: 0.7rem;
+}
+
+.g-recaptcha {
+  max-width: 100%;
+  transform-origin: center left;
+}
+
+.mentor-featured-row {
+  align-items: stretch;
+}
+
+.mentor-card,
+.mentor-card-flip,
+.mentor-featured-card {
+  height: 420px;
+}
+
+.mentor-card,
+.mentor-card-front,
+.mentor-featured-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.mentor-card .mentor-info,
+.mentor-card-front .mentor-info,
+.mentor-featured-card .mentor-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.45rem;
+  padding: 18px 18px 20px;
+}
+
+.mentor-info h4,
+.mentor-info p {
+  margin: 0;
+}
+
+.mentor-info p {
+  line-height: 1.45;
+}
+
+.mentor-tag {
+  margin-top: auto;
+}
+
+.mentor-card-back {
+  padding: 28px 24px;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.mentor-card-back h4,
+.mentor-credential,
+.mentor-skills li {
+  line-height: 1.35;
+}
+
+.mentor-skills {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.mentor-skills li {
+  margin-bottom: 0;
+}
+
+.mentor-photo-wrap,
+.mentor-card .mentor-photo-wrap,
+.mentor-featured-card .mentor-photo-wrap {
+  flex: 0 0 245px;
+  height: 245px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mentor-photo,
+.mentor-card .mentor-photo,
+.mentor-featured-card .mentor-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center top;
+  background: #f0f2f5;
+}
+
+.mentor-slider-track .mentor-card {
+  flex: 0 0 280px;
+  max-width: 280px;
+}
+
+@media (max-width: 640px) {
+  section,
+  .section-white,
+  .section-light,
+  .section-grad,
+  .gallery-section,
+  .mentors-section,
+  .enquire-section,
+  .our-achievements,
+  .about-cfp,
+  .placement-companies {
+    padding-top: 38px;
+    padding-bottom: 38px;
+  }
+
+  .modal {
+    width: min(100%, 360px);
+    max-height: calc(100dvh - 1rem);
+    padding: 1.2rem;
+  }
+
+  .modal-close {
+    top: 0.85rem;
+    right: 0.85rem;
+  }
+
+  .g-recaptcha {
+    transform: scale(0.86);
+    margin-right: -42px;
+  }
+
+  .mentor-card,
+  .mentor-card-flip,
+  .mentor-featured-card {
+    height: 380px;
+  }
+
+  .mentor-photo-wrap,
+  .mentor-card .mentor-photo-wrap,
+  .mentor-featured-card .mentor-photo-wrap {
+    flex-basis: 215px;
+    height: 215px;
+  }
+}
 </style>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -2978,7 +3218,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div class="cta-banner">
     <span class="cta-txt">Want to Know More?</span>
-    <a href="#" class="btn btn-gold alt" data-bs-toggle="modal" data-bs-target="#downloadBrochure" data-form-heading="Book Free Session" data-title="Book Free Session">Book Free Session</a>
+    <a href="#" class="btn btn-gold alt" onclick="openModal('session'); return false;">Book My Session</a>
   </div>
   </div>
 </section>
@@ -3631,7 +3871,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
 
       <!-- Slider wrapper -->
-             <h2 class="sec-title center">Our Faculty</h2>
+             <h2 class="sec-title center">Our Expert Faculty</h2>
+             <p class="sec-sub center faculty-subheading">Learn directly from expert faculty in wealth management, portfolio strategy, and investment advisory.</p>
 
       <div class="mentor-slider-wrap">
         <div class="mentor-slider-viewport">
@@ -4179,7 +4420,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="form-card">
         <h3>Get My Plan</h3>
-        <form class="modal-form" onsubmit="handleInlineSubmit(event)"action="mail.php" method="Post">
+        <form class="modal-form" onsubmit="return handleInlineSubmit(event)" action="mail.php" method="POST">
                                   		 <input type="hidden" name="utm_source" id="utm_source">
 <input type="hidden" name="utm_medium" id="utm_medium">
 <input type="hidden" name="utm_campaign" id="utm_campaign">
@@ -4294,7 +4535,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h3 id="modalTitle">Get Career Guidance</h3>
       <p id="modalCopy">Fill in your details and an expert will reach out within 24 hours.</p>
     </div>
-    <form class="modal-form" onsubmit="handleModalSubmit(event)" action="mail.php" method="POST">
+    <form class="modal-form" onsubmit="return handleModalSubmit(event)" action="mail.php" method="POST">
                               		 <input type="hidden" name="utm_source" id="utm_source">
 <input type="hidden" name="utm_medium" id="utm_medium">
 <input type="hidden" name="utm_campaign" id="utm_campaign">
@@ -4359,6 +4600,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         copy: 'Share your details and our counselor will reach out within 24 hours.',
         submit: 'Talk to Counselor'
       },
+      session: {
+        title: 'Book My Session',
+        copy: 'Share your details and our team will help you schedule the right guidance session.',
+        submit: 'Book My Session'
+      },
       guidance: {
         title: 'Get Career Guidance',
         copy: 'Fill in your details and an expert will reach out within 24 hours.',
@@ -4388,19 +4634,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   // Modal form
   function handleModalSubmit(e) {
-    e.preventDefault();
-    const captcha = document.getElementById('modalCaptcha');
-    if (!captcha.checked) { alert('Please verify you are not a robot.'); return; }
-    closeModal();
-    alert('Thank you! Our expert will contact you within 24 hours.');
-    e.target.reset();
+    return true;
   }
 
   // Inline form
   function handleInlineSubmit(e) {
-    e.preventDefault();
-    alert('Thank you! Your personalized finance career plan is being prepared. We\'ll be in touch soon.');
-    e.target.reset();
+    return true;
   }
 
   // FAQ accordion
